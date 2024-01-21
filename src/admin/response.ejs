@@ -34,18 +34,18 @@
       <th>Email</th>
       <th>Message</th>
     </tr>
-    <%data.forEach((item) => {%>
-    <tr>
-      <td><%= item.name%></td>
-      <td><%= item.email%></td>
-      <td><%= item.message%></td>
-    </tr>
-    <% }) ;%>
-  </table>
-  <!-- <ul>
     <% data.forEach((item) => { %>
-      <li><%= item.name %> - <%= item.email %> - <%= item.message%> </li>
+      <tr>
+        <% if (item) { %>
+          <td><%= item.name %></td>
+          <td><%= item.email %></td>
+          <td><%= item.message %></td>
+        <% } else { %>
+          <td>No data</td>
+        <% } %>
+      </tr>
     <% }); %>
-  </ul> -->
+  </table>
 </body>
+
 </html>

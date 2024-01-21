@@ -9,7 +9,13 @@ router.get('/', (req, res , next) => {
     const sql = 'SELECT * FROM restro.contact';
     database.query(sql, (err, results) => {
       if (err) throw err;
+      if (results && results.length > 0) {
       res.render('response.ejs', { data: results });
+      console.log(results);
+      } else {
+      res.render('response.ejs', { data: "No data" });
+        
+      }
     });
   });
 

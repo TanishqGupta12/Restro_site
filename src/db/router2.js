@@ -9,7 +9,12 @@ router.get('/', (req, res , next) => {
     const sql = 'SELECT * FROM Reservation';
     database.query(sql, (err, results) => {
       if (err) throw err;
-      res.render('from.ejs', { data: results });
+      if (results  && results.length > 0 ) {
+        res.render('from.ejs', { data: results });
+        } else {
+        res.render('from.ejs', { data: { data:"No data"} });
+        }
+
     });
   });
 

@@ -2,8 +2,9 @@ var mysql = require('mysql');
 var conn = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"admin123",
-    database : "restro"
+    password:"root123",
+    database : "restro",
+    port : 3306
 });
 
 
@@ -12,6 +13,4 @@ conn.connect(function(err){
     console.log("Database created!");
 
 });
-
-module.exports = conn;
-
+module.exports = conn

@@ -38,17 +38,23 @@
       <th>Phone_number</th>
     </tr>
     <% data.forEach((item) => { %>
-    <tr>
-      <td><%= item.dates %></td>
-      <td><%= item.times %></td>
-      <td><%= item.Person_number%></td>
-      <td><%= item.Person_name%></td>
-      <td><%= item.Person_email%></td>
-      <td><%= item.Phone_number%></td>
-    </tr>
+      <% if (item) { %>
+        <tr>
+          <td><%= item.dates %></td>
+          <td><%= item.times %></td>
+          <td><%= item.Person_number %></td>
+          <td><%= item.Person_name %></td>
+          <td><%= item.Person_email %></td>
+          <td><%= item.Phone_number %></td>
+        </tr>
+      <% } else { %>
+        <tr>
+          <td colspan="6"></td>
+        </tr>
+      <% } %>
     <% }); %>
-
- </table>
+  </table>
+  
 
 
 
