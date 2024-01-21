@@ -29,7 +29,7 @@ app.post('/reservation.html', function (req, res) {
     
     con.query(sql, [dates, times, Person_number, Person_name, Person_email, Phone_number], function (error, result) {
         if (error) throw error;
-        res.send('Register successfull' + result.insertId);
+      res.sendFile(path.join(__dirname , '../Public/tani.html'))
     });
 });
 
@@ -42,11 +42,14 @@ app.post('/contact.html', function (req, res) {
 
     con.query(sql, [name,email,message], function (error, result) {
         if (error) throw error;
-        res.send(' Contact successfull' + result.insertId);
+        // res.send(' Contact successfull' + result.insertId);
+        res.sendFile(path.join(__dirname , '../Public/tani.html'))
         console.log("Contact successfull");
     });
     
 });
+
+console.log();
 
 //routing
 // admin
